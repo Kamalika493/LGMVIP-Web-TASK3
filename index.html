@@ -1,0 +1,161 @@
+<Html>  
+    <head>   
+    <title>  
+    Registration Page  
+    </title>  
+    </head>  
+    <body bgcolor="pink"> 
+        <table width = "100%">
+            <tr><td width = "100%">
+                <table>
+                    <tr><td width = "60%">   
+                
+        <div class = title >REGISTRATION FORM</div>
+    <br>  
+    <br>  
+    <form>  
+    <label> Firstname </label>         
+    <input type="text" name="firstname" size="15" id="fname"/> <br> <br>  
+    <label> Middlename: </label>     
+    <input type="text" name="middlename" size="15" id="mname"/> <br> <br>  
+    <label> Lastname: </label>         
+    <input type="text" name="lastname" size="15" id="lname"/> <br> <br>  
+      
+    <label>   
+    Course :  
+    </label>   
+    <select id="course">  
+    <option value="Course">Course</option>  
+    <option value="BCA">BCA</option>  
+    <option value="BBA">BBA</option>  
+    <option value="B.Tech">B.Tech</option>  
+    <option value="MBA">MBA</option>  
+    <option value="MCA">MCA</option>  
+    <option value="M.Tech">M.Tech</option>  
+    </select>  
+      
+    <br>  
+    <br>  
+    <label id="gender">   
+    Gender :  
+    <br>
+    <input type="radio" name="male" id="gender_Male" value="Male"/> Male <br>  
+    <input type="radio" name="female" id="gender_Female" value="Female"/> Female <br>  
+    <input type="radio" name="other" id="gender_Other" value="Other"/> Other  
+</label>
+    <br>  
+    <br>  
+      
+    <label>   
+    Phone :  
+    </label>  
+    <input type="text" name="country code"  value="+91" size="2"/>   
+    <input type="text" name="phone" size="10" id="phone"/> <br> <br>  
+    Address  
+    <br>  
+    <textarea cols="80" rows="5" value="address" id="address">  
+    </textarea>  
+    <br> <br>  
+    Email:  
+    <input type="email" id="email" name="email" id="email"/> <br>    
+    <br> <br>  
+    Password:  
+    <input type="Password" id="pass" name="pass"> <br>   
+    <br> <br>  
+    Re-type password:  
+    <input type="Password" id="repass" name="repass"> <br> <br>  
+    <input type="button" name="button" id="btn" value="Submit" onclick="AddRow()">
+    
+    </form>
+    </td>
+    <td width="40%" valign="top">
+        <div class = title >ENROLLED STUDENTS</div>
+        <br>
+        <br>
+       <table border="4" id="show">
+        <thead>
+            <tr>
+                <th style="color:white">First Name</th>
+                <th style="color:white">Middle Name</th>
+                <th style="color:white">Last Name</th>
+                <th style="color:white">course</th>
+                <th style="color:white">Gender</th>
+                <th style="color:white">Phone</th>
+                <th style="color:white">Address</th>
+                <th style="color:white">Email</th>
+            </tr>
+        </thead>
+    </table>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    <script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+        var list5 = [];
+        var list6 = [];
+        var list7 = [];
+        var list8 = [];
+
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+             
+			list1[x] = document.getElementById("fname").value;
+			list2[x] = document.getElementById("mname").value;
+			list3[x] = document.getElementById("lname").value;
+		    list4[x] = document.getElementById("course").value;
+             if(document.getElementById('gender_Male').checked) {
+                list5[x] = document.getElementById('gender_Male').value;
+            }
+            if(document.getElementById('gender_Female').checked) {
+                list5[x] = document.getElementById("gender_Female").value;
+            }
+            if(document.getElementById('gender_Other').checked) {
+                list5[x] = document.getElementById("gender_Other").value;
+            }
+            
+            list6[x] = document.getElementById("phone").value;
+            list7[x] = document.getElementById("address").value;
+            list8[x] = document.getElementById("email").value;
+            
+
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+            var cel7 = NewRow.insertCell(6);
+            var cel8 = NewRow.insertCell(7);
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            cel6.innerHTML = list6[x];
+            cel7.innerHTML = list7[x];
+            cel8.innerHTML = list8[x];
+            
+
+			n++;
+			x++;
+		}
+
+	</script> 
+    </body>  
+    </html>  
